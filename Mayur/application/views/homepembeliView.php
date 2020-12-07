@@ -15,10 +15,9 @@
 			<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
-					<?php echo $session_data['user1'];
-					?>Bu Agus
+					<?php echo $this->session->userdata('user1'); ?>
 					<br>
-					Jl. Suara Bunga No.10
+					<?php echo $this->session->userdata('alamat1'); ?>
 				</p>
 			</div>
 			<div class="dropdown">
@@ -49,40 +48,20 @@
 		</div>
 		<p class="category">Paling Laris</p>
 		<div class="scroll">
-			<div class="box3">
-				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="recimg" style="margin-left: 5%;">
-				<p class="catdesc">
-					Mang Asep <br>
-					Saya jual berbagai macam sayuran, buah, bumbu, dll<br>
-					<a href="<?php echo base_url(); ?>sayurController/index">Details</a>
-				</p>
-			</div>
-			<div class="box3">
-				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="recimg" style="margin-left: 5%;">
-				<p class="catdesc">
-					Mang Asep <br>
-					Saya jual berbagai macam sayuran, buah, bumbu, dll<br>
-					<a href="<?php echo base_url(); ?>sayurController/index">Details</a>
-				</p>
-			</div>
-			<div class="box3">
-				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="recimg" style="margin-left: 5%;">
-				<p class="catdesc">
-					Mang Asep <br>
-					Saya jual berbagai macam sayuran, buah, bumbu, dll<br>
-					<a href="<?php echo base_url(); ?>sayurController/index">Details</a>
-				</p>
-			</div>
-			<div class="box3">
-				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="recimg" style="margin-left: 5%;">
-				<p class="catdesc">
-					Mang Asep <br>
-					Saya jual berbagai macam sayuran, buah, bumbu, dll<br>
-					<a href="">Details</a>
-				</p>
-			</div>
+			<?php $no = 1;
+			foreach ($daftarpenjual as $pj) :
+			?>
+				<div class="box3">
+					<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="recimg" style="margin-left: 5%;">
+					<p class="catdesc">
+						<?php echo $pj['nama_penjual']; ?><br>
+						<?php echo $pj['deskripsi']; ?><br>
+						<a href="<?php echo base_url(); ?>sayurController/index">Details</a>
+						<!-- <?php echo base_url() ?>Masinis_controler/editMasinis/<?= $msn['id_masinis']; ?> -->
+					</p>
+				</div>
+			<?php endforeach; ?>
 		</div>
-
 	</div>
 </body>
 

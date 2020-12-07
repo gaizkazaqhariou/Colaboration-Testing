@@ -26,11 +26,14 @@ class loginController extends CI_Controller
 
         if ($ceklogin) {
             foreach ($ceklogin as $row) {
+                $this->session->set_userdata('id', $row->id_penjual);
                 $this->session->set_userdata('user', $row->nama_penjual);
                 $this->session->set_userdata('nomer', $row->no_hp_penjual);
                 $this->session->set_userdata('password', $row->pass_penjual);
             }
-            redirect('homepenjualController');
+            $id = $this->session->userdata('id');
+
+            redirect("homePenjualController/index/$id");
         } else {
             $data['pesan'] = "username dan password anda salah";
             $this->load->view('loginView', $data);
