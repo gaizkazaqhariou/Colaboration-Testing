@@ -2,8 +2,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/chooser.css">
-	<title>User Chooser Page</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/chooser.css"> 
+	<title>Umum-User Chooser</title>
 </head>
 
 <body>

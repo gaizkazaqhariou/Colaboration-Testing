@@ -1,6 +1,7 @@
 body, html {
     height: 100%;
     margin: 0px;
+    overflow-y: hidden;
 }
 .backgroundImage{
 	width: 100%;
@@ -13,7 +14,7 @@ body, html {
 	width: 300px;
 	padding: 40px;
 	position: absolute;
-	top: 45%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	background: rgba(0,0,0,.6);
@@ -69,7 +70,7 @@ body, html {
 	width: 70%;
 	height: 20px;
 }
-.box input[type="submit"]{
+.box input[type="submit"], .box input[type="button"]{
 	border: 0;
 	background: #2ecc71;
 	display: block;
@@ -87,7 +88,7 @@ body, html {
 	width: 60%;
 	
 }
-.box input[type="submit"]:hover{
+.box input[type="submit"]:hover, .box input[type="button"]:hover{
 	background: white;
 	border: 2px solid white;
 	color: #2ecc71;
@@ -99,3 +100,4 @@ body, html {
 	margin-left: -15%;
 	margin-top: -5%;
 }
+

@@ -1,0 +1,280 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    overflow-y: hidden;
+}
+.backgroundImage{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.box{
+	width: 50%;
+	height: 80%;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: rgba(0,0,0,.4);
+	text-align: center;
+}
+
+.box1{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 6%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #22e071;
+	text-align: center;
+	color: white;
+	font-size: 16pt;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+}
+
+.div1{
+	width: 70%;
+}
+
+.dropbtn {
+	background-color: white;
+	color: #22e071;
+	padding: 5px;
+	font-size: 12pt;
+	border: none;
+	font-weight: bold;
+	border-radius: 10px;
+	width: auto;
+	height: 40px;
+	margin-top: 25%;
+}
+
+.plus {
+	background-color: #22e071;
+	color: white;
+	padding: 5px;
+	font-size: 12pt;
+	border: none;
+	font-weight: bold;
+	border-radius: 10px;
+	width: auto;
+	height: 40px;
+	margin-top: 3.5%;
+	margin-right: 3%;
+}
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+	align-items: right;
+	height: auto;
+	align-items: center;
+	margin-top: 0.5%;
+}
+
+.dropdown i {
+	color: #22e071;
+}
+
+.fas {
+	font-size: 16pt;
+	padding: 5px;
+}
+
+.fas:hover {
+	color: white;	
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	width: 350%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 10px;
+}
+
+.dropdown-content a{
+	color: #22e071;
+	font-weight: bold;
+	padding: 5px;
+	text-decoration: none;
+	display: block;
+	font-size: 11pt;
+}
+
+.dropdown-content a:hover{
+	background-color:#22e071;
+	border: 2px solid white;
+	color: white;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+.dropdown:hover .dropbtn{
+	background-color: #22e071;
+	border:2px solid white;
+	color: white;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.cbproduk {
+	width: 100%;
+	height: 60%;
+	background: white;
+	margin-top: 40%;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.kuantitas{
+	width: 10%;
+}
+
+.content input[type="text"] {
+	border: 0;
+	background: white;
+	display: block;
+	margin-top: 7%;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bolder;
+	border: 1px solid black;
+	padding: 14px 40px;
+	outline: none;
+	color: black;
+	border-radius: 10px;
+	transition: 0.25s; 
+	width: 50%;
+	height: 10px;
+}
+
+.content input[type="number"], .content input[type="url"] {
+	border: 0;
+	background: white;
+	display: block;
+	margin-top: 7%;
+	text-align: center;
+	font-weight: bolder;
+	border: 1px solid black;
+	padding: 14px 14px;
+	outline: none;
+	color: black;
+	border-radius: 10px;
+	transition: 0.25s; 
+	width: 12%;
+	height: 10px;
+	margin-left: 3%;
+	font-size: 11pt;
+}
+
+.context{
+	font-size: 14pt;
+	color: white;
+	font-weight: bold;
+	margin-top: 10%;
+}
+
+.card {
+	height: auto;
+	width: 100%;
+	background-color: white;
+}
+
+.sctext{
+	width: 20%;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+.fstext{
+	width: 50%;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+.thtext {
+	width: 30%;
+}
+
+.width1{
+	width: 50%;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 2%;
+	color: white;
+}
+
+.width2{
+	width: 50%;
+	color: white;
+	font-size: 14pt;
+	font-weight: bold;
+	margin-top: 2%;
+	text-align: center;
+}
+
+.content input[type="date"]{
+	border: 0;
+	background: white;
+	display: block;
+	margin-top: 3%;
+	text-align: center;
+	font-weight: bolder;
+	border: 1px solid black;
+	padding: 14px 14px;
+	outline: none;
+	color: black;
+	border-radius: 10px;
+	transition: 0.25s; 
+	width: 40%;
+	height: 10px;
+	margin-left: 3%;
+	font-size: 11pt;
+}
+
+.content input[type="submit"] {
+	border: 0;
+	background: #22e071;
+	display: block;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bolder;
+	border: none;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 10px;
+	transition: 0.25s; 
+	width: 50%;
+	height: 40px;
+	margin-left: 25%;
+	margin-top: 5%;
+}
+
+.scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 50%;
+}
