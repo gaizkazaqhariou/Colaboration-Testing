@@ -10,6 +10,6 @@ class penjualModel extends CI_Model
 
     public function getTotalGrup($id_penjual)
     {
-        return count($this->db->get_where('grup_jual', array('pemilik_grup' => $id_penjual))->row_array());
+        return count($this->db->get_where('grup_jual', array('pemilik_grup' => $id_penjual))->result_array());
     }
 }

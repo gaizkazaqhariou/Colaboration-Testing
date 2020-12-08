@@ -1,20 +1,26 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class rekapController extends CI_Controller {
+class rekapController extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
-    }
-    
-    public function index()
-    {
-        $this->load->view('rekapView');
+        if ($this->session->userdata('user') == '') {
+            redirect('chooserController');
+        }
+
+        $this->load->model('rekapModel');
+        $this->load->database();
     }
 
+    public function index($id)
+    {
+        $data['detailP'] = $this->rekapModel->detailPesanan($id);
+        $this->load->view('rekapView', $data);
+    }
 }
 
 /* End of file Controllername.php */
-?>

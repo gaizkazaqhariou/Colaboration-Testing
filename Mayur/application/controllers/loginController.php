@@ -33,7 +33,7 @@ class loginController extends CI_Controller
             }
             $id = $this->session->userdata('id');
 
-            redirect("homePenjualController/index/$id");
+            redirect("homepenjualController/index/$id");
         } else {
             $data['pesan'] = "username dan password anda salah";
             $this->load->view('loginView', $data);
