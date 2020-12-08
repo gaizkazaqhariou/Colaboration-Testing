@@ -47,7 +47,7 @@
 			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url() ?>listorderController/index';">
 				<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="recimg" style="margin-left: 5%; border: none;">
 				<p class="catdesc">
-					CR1W15
+					<?php echo $dataG['kode_grup']; ?>
 				</p>
 			</div>
 		</div>

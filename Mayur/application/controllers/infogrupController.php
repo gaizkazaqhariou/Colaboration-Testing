@@ -21,6 +21,7 @@ class infogrupController extends CI_Controller
         $this->session->set_userdata('id_grup', $id_grup);
 
         $data['totalG'] = $this->infoModel->getTotalGrup($id_grup);
+        $data['dataG'] = $this->infoModel->getdataGrup($id_grup);
         $data['totalP'] = $this->infoModel->getTotalPesanan($id_grup);
         $this->load->view('infogrupView', $data);
     }
