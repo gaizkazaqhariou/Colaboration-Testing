@@ -44,7 +44,7 @@
 		</div>
 		<p class="category">Kode Grup</p>
 		<div style="display: flex; flex-direction: row;">
-			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url() ?>listorderController/index';">
+			<div class="box3" style="width: 100%;">
 				<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="recimg" style="margin-left: 5%; border: none;">
 				<p class="catdesc">
 					<?php echo $dataG['kode_grup']; ?>

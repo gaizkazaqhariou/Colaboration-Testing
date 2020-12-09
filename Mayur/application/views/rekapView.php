@@ -15,16 +15,16 @@
 			<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
-					Bu Agus
+					<?php echo $this->session->userdata('user1'); ?>
 					<br>
-					Jl. Suara Bunga No.10
+					<?php echo $this->session->userdata('alamat1'); ?>
 				</p>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepenjualController/index">Home</a>
-					<a href="<?php echo base_url(); ?>totalController/index">Grup Saya</a>
+					<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+					<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
 					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
 				</div>
 			</div>

@@ -1,20 +1,26 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class listpedagangController extends CI_Controller {
+class listpedagangController extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
-    }
-    
-    public function index()
-    {
-        $this->load->view('listpedagangView');
+        if ($this->session->userdata('user1') == '') {
+            redirect('chooserController');
+        }
+
+        $this->load->model('pembeliModel');
+        $this->load->database();
     }
 
+    public function index()
+    {
+        $data['daftarpenjual'] = $this->pembeliModel->daftarPenjual();
+        $this->load->view('listpedagangView', $data);
+    }
 }
 
 /* End of file Controllername.php */
-?>

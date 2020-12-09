@@ -18,7 +18,7 @@ class homepembeliController extends CI_Controller
     public function index($id)
     {
         $data['id_pembeli'] = $id;
-        $data['daftarpenjual'] = $this->pembeliModel->daftarPenjual();
+        $data['daftarpenjual'] = $this->pembeliModel->penjualLimit();
 
         $this->load->view('homepembeliView', $data);
     }

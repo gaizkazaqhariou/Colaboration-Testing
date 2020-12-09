@@ -14,7 +14,7 @@
 		<div class="box1">
 			<div class="box1">
 				<div class="div1">
-					<p class="teks">Nama Grup</p>
+					<p class="teks"><?php echo $namaG['nama_grup']; ?></p>
 				</div>
 				<div class="dropdown">
 					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>

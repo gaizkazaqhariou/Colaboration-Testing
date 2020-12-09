@@ -1,8 +1,9 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class produkController extends CI_Controller {
+class produkController extends CI_Controller
+{
 
     public function __construct()
     {
@@ -12,30 +13,30 @@ class produkController extends CI_Controller {
         }
 
         $this->load->model('produkModel');
-        $this->load->database();    
+        $this->load->database();
     }
-    
+
     public function index($id)
     {
-    	$data['produkP'] = $this->produkModel->produkPenjual($id);
+        $data['produkP'] = $this->produkModel->produkPenjual($id);
         $data['id'] = $this->session->userdata('id');
         $this->load->view('produkView', $data);
     }
 
-    public function hapus($id){
-    	$where = array('id_barang'=>$id);
-    	$this->produkModel->hapus_data($where, 'barang');
-    	$id_penjual = $this->session->userdata('id');
-    	redirect("produkController/index/$id_penjual");
+    public function hapus($id)
+    {
+        $where = array('id_barang' => $id);
+        $this->produkModel->hapus_data($where, 'barang');
+        $id_penjual = $this->session->userdata('id');
+        redirect("produkController/index/$id_penjual");
     }
 
-    public function edit($id_barang){
-        $where = array('id_barang'=>$id_barang);
+    public function edit($id_barang)
+    {
+        $where = array('id_barang' => $id_barang);
         $data['produk'] = $this->produkModel->edit_data($where, 'barang')->result();
         $this->load->view('editprodukView', $data);
     }
-
 }
 
 /* End of file Controllername.php */
-?>

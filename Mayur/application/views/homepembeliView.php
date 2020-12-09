@@ -38,7 +38,7 @@
 			<button class="but" type="button" style="margin-left: 5%;" onclick="window.location='<?php echo base_url() ?>listpedagangController/index';">
 				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="categoryimg">
 			</button>
-			<button class="but" type="button" onclick="window.location='<?php echo base_url() ?>sayurController/index';">
+			<button class="but" type="button" onclick="window.location='<?php echo base_url() ?>sayurController/allproduk';">
 				<img src="<?php echo base_url(); ?>assets/img/cart.png" class="categoryimg">
 			</button>
 			<button class="but" type="button" onclick="window.location='<?php echo base_url() ?>factController/index';">
@@ -56,8 +56,7 @@
 					<p class="catdesc">
 						<?php echo $pj['nama_penjual']; ?><br>
 						<?php echo $pj['deskripsi']; ?><br>
-						<a href="<?php echo base_url(); ?>sayurController/index">Details</a>
-						<!-- <?php echo base_url() ?>Masinis_controler/editMasinis/<?= $msn['id_masinis']; ?> -->
+						<a href="<?php echo base_url(); ?>sayurController/index/<?php echo $pj['id_penjual']; ?>">Details</a>
 					</p>
 				</div>
 			<?php endforeach; ?>

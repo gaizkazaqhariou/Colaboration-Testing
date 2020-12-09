@@ -13,12 +13,14 @@ class listanggotaController extends CI_Controller
         }
 
         $this->load->model('grupModel');
+        $this->load->model('infoModel');
         $this->load->database();
     }
 
-    public function index($id)
+    public function index($id_grup)
     {
-        $data['anggota'] = $this->grupModel->anggotaGrup($id);
+        $data['anggota'] = $this->grupModel->anggotaGrup($id_grup);
+        $data['namaG'] = $this->infoModel->getdataGrup($id_grup);
         $this->load->view('listanggotaView', $data);
     }
 }
