@@ -20,16 +20,18 @@ class addprodukController extends CI_Controller {
     public function tambahProduk(){
     	$nama_barang = $this->input->post('nama_barang');
         $harga = $this->input->post('harga');
-        $satuan = $this->session->post('satuan');
+        $satuan = $this->input->post('satuan');
+        $pemilik_barang = $this->session->userdata('id');
 
         $data = array(
-            'nama_grup' => $nama_grup,
-            'kode_grup' => $kode_grup,
-            'pemilik_grup' => $pemilik_grup
+            'nama_barang' => $nama_barang,
+            'harga' => $harga,
+            'satuan' => $satuan,
+            'pemilik_barang' => $pemilik_barang
         );
 
-        $this->addgrupModel->input_data($data,'grup_jual');
-        redirect("grupController/index/$pemilik_grup");
+        $this->addprodukModel->input_data($data,'barang');
+        redirect("produkController/index/$pemilik_barang");
     }
 }
 

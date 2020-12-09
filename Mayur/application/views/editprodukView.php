@@ -6,12 +6,16 @@
 </head>
 <body>
 	<img src="<?php echo base_url();?>assets/img/sayur.jpg" class="backgroundImage">
-		<div class="box" action="proses_login.php" method="POST">
+	<?php foreach($produk as $pr){?> 
+		<form class="box" action="<?php echo base_url('editprodukController/editProduk');?>" method="POST">
 			<h1 class="h1"><b>Edit Produk</b></h1>
-			<input type="text" name="username" placeholder="Nama Produk">
-			<input type="text" name="nomer" placeholder="Harga Produk">
+			<input type="hidden" name="id_barang" value="<?php echo $pr->id_barang ?>">
+			<input type="text" name="nama_barang" value="<?php echo $pr->nama_barang ?>">
+			<input type="text" name="harga" value="<?php echo $pr->harga?>">
+			<input type="text" name="satuan" value="<?php echo $pr->satuan?>">
 			<input type="file" name="">
-			<input type="button" name="login" value="Edit Produk" onclick="window.location='<?php echo base_url()?>produkController/index';">
-		</div>
+			<input type="submit" name="login" value="Edit Produk">
+		</form>
+	<?php } ?>
 </body>
 </html>

@@ -13,6 +13,7 @@ class homepenjualController extends CI_Controller
         }
 
         $this->load->model('penjualModel');
+        $this->load->model('produkModel');
         $this->load->database();
     }
 
@@ -23,9 +24,13 @@ class homepenjualController extends CI_Controller
 
         $data['datapenjual'] = $this->penjualModel->dataPenjual($id_penjual);
         $data['total'] = $this->penjualModel->getTotalGrup($id_penjual);
+        $data['dataproduk'] = $this->penjualModel->dataProduk($id_penjual);
+        $data['totalProduk'] = $this->penjualModel->getTotalProduk($id_penjual);
 
         $this->load->view('homepenjualView', $data);
     }
+
+
 }
 
 /* End of file Controllername.php */

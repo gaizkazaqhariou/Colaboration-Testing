@@ -21,8 +21,8 @@
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepenjualController/index/<?php echo $this->session->userdata('id'); ?>">Home</a>
-					<a href="<?php echo base_url(); ?>totalController/index">Pesanan</a>
+					<a href="<?php echo base_url('homepenjualController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Home</a>
+					<a href="<?php echo base_url('totalController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
 					<a href="<?php echo base_url(); ?>loginController/logout">Logout</a>
 				</div>
 			</div>
@@ -41,12 +41,12 @@
 		</div>
 		<p class="context" style="margin-top: 5%;">Rekapitulasi</p>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">
-		<div style="display: flex; flex-direction: column; margin-top: 5%; margin-left: 5%;" type="button" onclick="window.location='<?php echo base_url() ?>produkController/index';">
+		<div style="display: flex; flex-direction: column; margin-top: 5%; margin-left: 5%;" type="button" onclick="window.location='<?php echo base_url('produkController/index/'); ?><?php echo $this->session->userdata('id'); ?>';">
 			<div class="content">
 				<div style="display: flex; flex-direction: row;">
 					<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="imageContent">
 					<p class="textContent">
-						<b>Anda memiliki 27 produk</b>
+						<b>Anda memiliki <?= $totalProduk; ?> produk</b>
 					</p>
 				</div>
 			</div>

@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class grupModel extends CI_Model
+class produkModel extends CI_Model
 {
-    public function grupPenjual($id)
+    public function produkPenjual($id)
     {
-        return $this->db->get_where('grup_jual', array('pemilik_grup' => $id))->result_array();
+        return $this->db->get_where('barang', array('pemilik_barang' => $id))->result_array();
     }
 
     public function hapus_data($where, $table){
@@ -17,5 +17,3 @@ class grupModel extends CI_Model
     	return $this->db->get_where($table, $where);
     }
 }
-
-/* End of file ModelName.php */
