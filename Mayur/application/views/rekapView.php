@@ -15,16 +15,22 @@
 			<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
-					<?php echo $this->session->userdata('user1'); ?>
+					<?php echo $dataP['nama_pembeli']; ?>
 					<br>
-					<?php echo $this->session->userdata('alamat1'); ?>
+					<?php echo $dataP['alamat_pembeli']; ?>
 				</p>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
-					<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
+					<?php if ($this->session->userdata('user') == '') { ?>
+						<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+						<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
+					<?php } ?>
+					<?php if ($this->session->userdata('user1') == '') { ?>
+						<a href="<?php echo base_url('homepenjualController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Home</a>
+						<a href="<?php echo base_url('totalController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
+					<?php } ?>
 					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
 				</div>
 			</div>

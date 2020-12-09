@@ -26,19 +26,21 @@ class orderController extends CI_Controller
     public function addOrder()
     {
         $id_grup = $this->input->post('id_grup');
-        $nama_barang = $this->input->post('nama_barang');
+        $id_pembeli = $this->session->userdata('id1');
+        $id_barang = $this->input->post('id_barang');
         $jumlah = $this->input->post('qty');
         $waktu = $this->input->post('waktu');
 
         $data = array(
-            'nama_barang' => $nama_barang,
+            'id_grup' => $id_grup,
+            'id_pembeli' => $id_pembeli,
+            'id_barang' => $id_barang,
             'jumlah_barang' => $jumlah,
             'keterangan' => $waktu
         );
 
-        $id = $this->session->userdata('id1');
-        $this->produkModel->input_data($data, 'detail_pesanan');
-        redirect("listorderController/index/$id/$id_grup");
+        $this->produkModel->input_data($data, 'pesanan');
+        redirect("listorderController/index/$id_pembeli/$id_grup");
     }
 }
 

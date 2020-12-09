@@ -8,7 +8,7 @@ class rekapController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('user1') == '') {
+        if ($this->session->userdata('user') == '') {
             redirect('chooserController');
         }
 
@@ -18,6 +18,7 @@ class rekapController extends CI_Controller
 
     public function index($id)
     {
+        $data['dataP'] = $this->rekapModel->dataPembeli($id);
         $data['detailP'] = $this->rekapModel->detailPesanan($id);
         $this->load->view('rekapView', $data);
     }
