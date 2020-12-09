@@ -19,9 +19,9 @@
 				<div class="dropdown">
 					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 					<div class="dropdown-content">
-						<a href="<?php echo base_url('homepenjualController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Home</a>
-					<a href="<?php echo base_url('totalController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
-					<a href="<?php echo base_url(); ?>loginController/logout">Logout</a>
+						<a href="<?php echo base_url(); ?>homepenjualController/index">Home</a>
+						<a href="<?php echo base_url(); ?>totalController/index">Pesanan</a>
+						<a href="<?php echo base_url(); ?>loginController/logout">Logout</a>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 					<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="recimg">
 					<p class="catdesc">
 						<?php echo $lp['nama_pembeli']; ?>
-						<a href="<?php echo base_url(); ?>rekapController/index/<?php echo $lp['id_pembeli']; ?>" class="link">Details</a>
+						<a href="<?php echo base_url(); ?>rekapController/index/<?php echo $lp['id_pembeli']; ?>/<?php echo $id_grup; ?>" class="link">Details</a>
 					</p>
 				</div>
 			<?php endforeach; ?>

@@ -18,8 +18,8 @@
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepembeliController/index">Home</a>
-					<a href="<?php echo base_url(); ?>gruppembeliController/index">Grup Saya</a>
+					<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+					<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
 					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
 				</div>
 			</div>
@@ -27,10 +27,10 @@
 		</div>
 		<p class="category" style="margin-top: 10%;">Pesananku</p>
 		<div style="display: flex; flex-direction: row;">
-			<div class="box3" style="width: 65%;" type="button" onclick="window.location='<?php echo base_url() ?>listorderController/index';">
+			<div class="box3" style="width: 65%;" type="button" onclick="window.location='<?php echo base_url('listorderController/index/'); ?><?php echo $this->session->userdata('id1'); ?>/<?php echo $id_grup; ?>';">
 				<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="recimg" style="margin-left: 5%; border: none;">
 				<p class="catdesc">
-					Anda memiliki 1 pesanan
+					Anda memiliki <?php echo $jmlP; ?> pesanan
 				</p>
 			</div>
 		</div>

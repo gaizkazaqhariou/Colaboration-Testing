@@ -16,11 +16,10 @@ class detailController extends CI_Controller
         $this->load->database();
     }
 
-    public function index()
+    public function index($id_grup)
     {
-        $id = $this->session->userdata('id_grup');
-
-        $data['listP'] = $this->detailModel->listPesanan($id);
+        $data['id_grup'] = $id_grup;
+        $data['listP'] = $this->detailModel->listPesanan($id_grup);
         $this->load->view('detailView', $data);
     }
 }

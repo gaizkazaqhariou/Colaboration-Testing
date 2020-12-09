@@ -29,8 +29,6 @@ class homepenjualController extends CI_Controller
 
         $this->load->view('homepenjualView', $data);
     }
-
-
 }
 
 /* End of file Controllername.php */

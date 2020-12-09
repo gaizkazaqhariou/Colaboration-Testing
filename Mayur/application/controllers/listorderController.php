@@ -1,20 +1,26 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class listorderController extends CI_Controller {
+class listorderController extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
-    }
-    
-    public function index()
-    {
-        $this->load->view('listorderView');
+        if ($this->session->userdata('user1') == '') {
+            redirect('chooserController');
+        }
+
+        $this->load->model('rekapModel');
+        $this->load->database();
     }
 
+    public function index($id, $id_grup)
+    {
+        $data['listP'] = $this->rekapModel->detailPesanan($id, $id_grup);
+        $this->load->view('listorderView', $data);
+    }
 }
 
 /* End of file Controllername.php */
-?>

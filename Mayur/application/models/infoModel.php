@@ -14,6 +14,11 @@ class infoModel extends CI_Model
         return count($this->db->get_where('pesanan', array('id_grup' => $id_grup))->result_array());
     }
 
+    public function getJmlPesanan($id, $id_grup)
+    {
+        return count($this->db->get_where('pesanan', array('id_pembeli' => $id, 'id_grup' => $id_grup))->result_array());
+    }
+
     public function getdataGrup($id_grup)
     {
         return $this->db->get_where('grup_jual', array('id_grup' => $id_grup))->row_array();

@@ -26,7 +26,7 @@
 		</div>
 		<p class="category" style="margin-top: 10%;">Anggota</p>
 		<div style="display: flex; flex-direction: row;">
-			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url() ?>listanggotaController/index';">
+			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url('listanggotaController/index/'); ?><?php echo $this->session->userdata('id_grup'); ?>';">
 				<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="recimg" style="margin-left: 5%; border: none;">
 				<p class="catdesc">
 					Grup ini memiliki <?php echo $totalG; ?> anggota
@@ -35,7 +35,7 @@
 		</div>
 		<p class="category">Pesanan</p>
 		<div style="display: flex; flex-direction: row;">
-			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url() ?>detailController/index';">
+			<div class="box3" style="width: 100%;" type="button" onclick="window.location='<?php echo base_url('detailController/index/'); ?><?php echo $this->session->userdata('id_grup'); ?>';">
 				<img src="<?php echo base_url(); ?>assets/img/cart1.png" class="recimg" style="margin-left: 5%; border: none;">
 				<p class="catdesc">
 					Anda memiliki <?php echo $totalP; ?> pesanan
