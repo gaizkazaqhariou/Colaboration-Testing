@@ -19,7 +19,7 @@ class grupController extends CI_Controller
     public function index($id)
     {
         $data['grupP'] = $this->grupModel->grupPenjual($id);
-        $data['id'] = $this->session->flashdata('id');
+        $data['id'] = $this->session->userdata('id');
 
         $this->load->view('grupView', $data);
     }

@@ -19,10 +19,9 @@ class loginController extends CI_Controller
     public function aksi_login()
     {
         $username = htmlspecialchars($this->input->post('username'));
-        $nohp = htmlspecialchars($this->input->post('nohp'));
         $password = htmlspecialchars($this->input->post('password'));
 
-        $ceklogin = $this->loginModel->login($username, $nohp, $password);
+        $ceklogin = $this->loginModel->login($username, $password);
 
         if ($ceklogin) {
             foreach ($ceklogin as $row) {

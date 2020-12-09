@@ -9,7 +9,6 @@ class registerController extends CI_Controller {
         parent::__construct();
         $this->load->model('registerModel');
 		$this->load->database();
-		$this->load->helper('form');
     }
     
     public function index()
@@ -18,18 +17,26 @@ class registerController extends CI_Controller {
     }
 
     public function tambahPenjual(){
-    	$this->form_validation->set_rules('nama_penjual', 'nama_penjual', 'required');
-    	$this->form_validation->set_rules('no_hp_penjual', 'no_hp_penjual', 'required');
-    	$this->form_validation->set_rules('alamat_penjual', 'alamat_penjual', 'required');
-		$this->form_validation->set_rules('pass_penjual', 'pass_penjual', 'required');
+    	$nama_pembeli = $this->input->post('nama_penjual');
+        $no_hp_pembeli = $this->input->post('no_hp_penjual');
+        $alamat_pembeli = $this->input->post('alamat_penjual');
+        $pass_pembeli = $this->input->post('pass_penjual');
+        $foto_pembeli = $this->input->post('foto_penjual');
+        $kategori = $this->input->post('kategori');
+        $deskripsi = $this->input->post('deskripsi');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('registerView');
-		} else {
-			$this->registerModel->tambahPenjual();
-			$this->session->set_flashdata('flash-data', 'ditambah');
-			redirect('loginController/index');
-		}
+        $data = array(
+            'nama_penjual' => $nama_pembeli,
+            'no_hp_penjual' => $no_hp_pembeli,
+            'alamat_penjual' => $alamat_pembeli,
+            'pass_penjual' => $pass_pembeli,
+            'foto_penjual' => $foto_pembeli,
+            'kategori' => $kategori,
+            'deskripsi' => $deskripsi
+        );
+
+        $this->registerModel->input_data($data,'penjual');
+        redirect('loginController');
     }
 }
 

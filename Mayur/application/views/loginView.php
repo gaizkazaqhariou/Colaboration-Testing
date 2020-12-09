@@ -11,7 +11,6 @@
 	<form class="box" action="<?php echo base_url('loginController/aksi_login') ?>" method="POST">
 		<h1 class="h1"><b>Login Penjual</b></h1>
 		<input type="text" name="username" placeholder="Username">
-		<input type="text" name="nohp" placeholder="Nomer HP Terdaftar">
 		<input type="password" name="password" placeholder="Password">
 		<a href="">Lupa password?</a>
 		<input type="submit" name="login" value="Masuk">
