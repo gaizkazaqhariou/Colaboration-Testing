@@ -17,6 +17,11 @@ class produkModel extends CI_Model
         return $this->db->get('barang')->result_array();
     }
 
+    public function input_data($data, $table)
+    {
+        $this->db->insert($table, $data);
+    }
+
     public function hapus_data($where, $table)
     {
         $this->db->where($where);

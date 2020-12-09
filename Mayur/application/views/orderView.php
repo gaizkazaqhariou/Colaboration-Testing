@@ -24,14 +24,33 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="content">
-			<input type="text" name="product" disabled="text">
-			<input type="number" name="product" class="kuantitas">
-			<input type="url" name="product" disabled="text" value="Kg">
+			<select name="nama_barang" class="form-control">
+				<option value="pick">Nama Barang</option>
+				<?php $no = 1;
+				foreach ($listB as $lp) :
+					echo "<option value='" . $lp['id_barang'] . "'>" . $lp['nama_barang'] . " - " . $lp['harga'] . "/" . $lp['satuan'] . "</option>";
+				?>
+				<?php endforeach; ?>
+			</select>
+			<input type="hidden" name="id_grup" value="<?php echo $id_grup; ?>">
+			<input type="number" name="qty" class="kuantitas">
 		</div>
 		<div class="content">
 			<p class="context">Waktu</p>
-			<input type="date" name="product">
+			<select name="waktu" class="form-control">
+				<option value="hari_ini">
+					hari ini - <?php $date = date('Y-m-d');
+								echo $date;  ?>
+				</option>
+				<option value="besok">
+					besok - <?php $datetime = new DateTime();
+							$datetime->modify('+1 day');
+							echo $datetime->format('Y-m-d');  ?>
+				</option>
+				<option></option>
+			</select>
 		</div>
 		<div class="content">
 			<input type="button" name="" value="Tambahkan" onclick="window.location='<?php echo base_url() ?>listorderController/index';">

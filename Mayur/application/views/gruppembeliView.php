@@ -43,7 +43,7 @@
 							<br>
 							<?php echo $gj['deskripsi']; ?>
 						</p>
-						<button class="plus" onclick="window.location='<?php echo base_url() ?>orderController/index';"> <i class="fas fa-plus"></i> </button>
+						<button class="plus" onclick="window.location='<?php echo base_url('orderController/index/'); ?><?php echo $gj['pemilik_grup']; ?>/<?php echo $gj['id_grup']; ?>';"> <i class="fas fa-plus"></i> </button>
 						<button class="plus" style="margin-left: 3%;" onclick="window.location='<?php echo base_url('onegrupController/index/'); ?><?php echo $this->session->userdata('id1'); ?>/<?php echo $gj['id_grup']; ?>';"> <i class="fas fa-door-open"></i> </button>
 						<button class="plus" style="margin-left: 3%;"> <i class="fas fa-trash-alt"></i> </button>
 					</div>
