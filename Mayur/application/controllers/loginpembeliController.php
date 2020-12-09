@@ -19,19 +19,22 @@ class loginpembeliController extends CI_Controller
     public function aksi_login()
     {
         $username = htmlspecialchars($this->input->post('username'));
-        $nohp = htmlspecialchars($this->input->post('nohp'));
+        // $nohp = htmlspecialchars($this->input->post('nohp'));
         $password = htmlspecialchars($this->input->post('password'));
 
-        $ceklogin = $this->loginpembeliModel->login($username, $nohp, $password);
+        $ceklogin = $this->loginpembeliModel->login($username, $password);
 
         if ($ceklogin) {
             foreach ($ceklogin as $row) {
+                $this->session->set_userdata('id1', $row->id_pembeli);
                 $this->session->set_userdata('user1', $row->nama_pembeli);
                 $this->session->set_userdata('nomer1', $row->no_hp_pembeli);
                 $this->session->set_userdata('alamat1', $row->alamat_pembeli);
                 $this->session->set_userdata('foto1', $row->foto_pembeli);
             }
-            redirect('homepembeliController');
+            $id1 = $this->session->userdata('id1');
+
+            redirect("homepembeliController/index/$id1");
         } else {
             $data['pesan'] = "username dan password anda salah";
             $this->load->view('loginpembeliView', $data);

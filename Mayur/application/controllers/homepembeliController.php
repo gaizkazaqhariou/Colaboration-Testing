@@ -15,12 +15,14 @@ class homepembeliController extends CI_Controller
         $this->load->database();
     }
 
-    public function index()
+    public function index($id)
     {
+        $data['id_pembeli'] = $id;
         $data['daftarpenjual'] = $this->pembeliModel->daftarPenjual();
 
         $this->load->view('homepembeliView', $data);
     }
 }
+
 
 /* End of file Controllername.php */
