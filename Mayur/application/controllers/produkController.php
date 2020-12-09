@@ -22,6 +22,19 @@ class produkController extends CI_Controller {
         $this->load->view('produkView', $data);
     }
 
+    public function hapus($id){
+    	$where = array('id_barang'=>$id);
+    	$this->produkModel->hapus_data($where, 'barang');
+    	$id_penjual = $this->session->userdata('id');
+    	redirect("produkController/index/$id_penjual");
+    }
+
+    public function edit($id_barang){
+        $where = array('id_barang'=>$id_barang);
+        $data['produk'] = $this->produkModel->edit_data($where, 'barang')->result();
+        $this->load->view('editprodukView', $data);
+    }
+
 }
 
 /* End of file Controllername.php */

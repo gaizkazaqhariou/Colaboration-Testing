@@ -23,6 +23,19 @@ class grupController extends CI_Controller
 
         $this->load->view('grupView', $data);
     }
+
+    public function hapus($id){
+        $where = array('id_grup'=>$id);
+        $this->grupModel->hapus_data($where, 'grup_jual');
+        $id_penjual = $this->session->userdata('id');
+        redirect("grupController/index/$id_penjual");
+    }
+
+    public function edit($id_grup){
+        $where = array('id_grup'=>$id_grup);
+        $data['grup'] = $this->grupModel->edit_data($where, 'grup_jual')->result();
+        $this->load->view('editgrupView', $data);
+    }
 }
 
 /* End of file Controllername.php */

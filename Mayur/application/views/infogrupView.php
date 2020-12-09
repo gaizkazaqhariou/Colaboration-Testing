@@ -18,8 +18,8 @@
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
 				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepenjualController/index">Home</a>
-					<a href="<?php echo base_url(); ?>totalController/index">Pesanan</a>
+					<a href="<?php echo base_url('homepenjualController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Home</a>
+					<a href="<?php echo base_url('totalController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
 					<a href="<?php echo base_url(); ?>loginController/logout">Logout</a>
 				</div>
 			</div>
