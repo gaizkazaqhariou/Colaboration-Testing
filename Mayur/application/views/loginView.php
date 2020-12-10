@@ -12,7 +12,7 @@
 		<h1 class="h1"><b>Login Penjual</b></h1>
 		<input type="text" name="username" placeholder="Username">
 		<input type="password" name="password" placeholder="Password">
-		<a href="">Lupa password?</a>
+		<a href="<?php echo base_url('contactController/index') ?>">Lupa password?</a>
 		<input type="submit" name="login" value="Masuk">
 	</form>
 </body>

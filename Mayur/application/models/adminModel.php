@@ -23,24 +23,37 @@ class adminModel extends CI_Model
         return count($this->db->get('penjual')->result_array());
     }
 
-    public function editpembeli()
+    public function editpembeli($where, $table)
     {
-        # code...
+        return $this->db->get_where($table, $where);
     }
 
-    public function editpenjual()
+    public function editpembeli2($where, $data, $table)
     {
-        # code...
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 
-    public function hapuspembeli()
+    public function editpenjual2($where, $data, $table)
     {
-        # code...
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 
-    public function hapuspenjual()
+    public function editpenjual($where, $table){
+        return $this->db->get_where($table, $where);
+    }
+
+    public function hapuspembeli($where, $table)
     {
-        # code...
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function hapuspenjual($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
     }
 }
 
