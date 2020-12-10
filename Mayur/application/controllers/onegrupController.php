@@ -14,13 +14,14 @@ class onegrupController extends CI_Controller
 
         $this->load->model('grupModel');
         $this->load->model('infoModel');
+        $this->load->model('pembeliModel');
         $this->load->database();
     }
 
     public function index($id, $id_grup)
     {
         $data['id_grup'] = $id_grup;
-
+        $data['grupJ'] = $this->pembeliModel->grupTerjoin($id_grup);
         $data['jmlP'] = $this->infoModel->getJmlPesanan($id, $id_grup);
         $data['anggota'] = $this->grupModel->anggotaGrup($id_grup);
 

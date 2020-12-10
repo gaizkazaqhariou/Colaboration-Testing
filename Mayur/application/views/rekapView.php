@@ -29,7 +29,7 @@
 					<?php } ?>
 					<?php if ($this->session->userdata('user1') == '') { ?>
 						<a href="<?php echo base_url('homepenjualController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Home</a>
-						<a href="<?php echo base_url('totalController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
+						<a href="<?php echo base_url('detailController/index/'); ?><?php echo $this->session->userdata('id'); ?>">Pesanan</a>
 					<?php } ?>
 					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
 				</div>

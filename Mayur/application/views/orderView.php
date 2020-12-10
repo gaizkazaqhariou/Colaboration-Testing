@@ -10,10 +10,13 @@
 
 <body>
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
-	<form class="box" action="proses_login.php" method="POST">
+	<form class="box" action="<?php echo base_url('orderController/addOrder'); ?>" method="POST">
+		<?php $no = 1;
+			foreach ($grupJ as $gj) :
+		?>
 		<div class="box1">
 			<div class="div1">
-				<p class="teks">Nama Grup</p>
+				<p class="teks"><?php echo $gj['nama_grup']; ?></p>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
@@ -24,9 +27,9 @@
 				</div>
 			</div>
 		</div>
-
+		<?php endforeach; ?>
 		<div class="content">
-			<select name="nama_barang" class="form-control">
+			<select name="id_barang" class="form-control" style="width: 50%; margin-top: 5%; margin-left: 15%;">
 				<option value="pick">Nama Barang</option>
 				<?php $no = 1;
 				foreach ($listB as $lp) :
@@ -53,7 +56,7 @@
 			</select>
 		</div>
 		<div class="content">
-			<input type="button" name="" value="Tambahkan" onclick="window.location='<?php echo base_url() ?>listorderController/index';">
+			<input type="submit" name="" value="Tambahkan">
 		</div>
 	</form>
 </body>

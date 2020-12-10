@@ -22,4 +22,12 @@ class penjualModel extends CI_Model
     {
         return count($this->db->get_where('barang', array('pemilik_barang' => $id_penjual))->result_array());
     }
+
+    public function produkwhere($id_barang){
+        return $this->db->get_where('barang', array('id_barang' => $id_barang))->row_array();
+    }
+
+    public function keterangan($id_pesanan){
+        return $this->db->get_where('pesanan', array('id_pesanan' => $id_pesanan))->row_array();
+    }
 }

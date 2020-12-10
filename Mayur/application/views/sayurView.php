@@ -47,7 +47,7 @@
 						<?php echo $pp['nama_barang']; ?> di <?php echo $pp['nama_penjual']; ?><br>
 						<?php echo $pp['harga']; ?>/<?php echo $pp['satuan']; ?><br>
 					</p>
-					<button onclick="window.location='<?php echo base_url('gruppembeliController/index/'); ?><?php echo $this->session->userdata('id1'); ?>';">Pilih</button>
+					<!-- <button onclick="window.location='<?php echo base_url('gruppembeliController/index/'); ?><?php echo $this->session->userdata('id1'); ?>';">Pilih</button> -->
 				</div>
 			<?php endforeach; ?>
 		</div>

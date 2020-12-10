@@ -11,9 +11,12 @@
 <body>
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
+		<?php $no = 1;
+			foreach ($grupJ as $gj) :
+		?>
 		<div class="box1">
 			<div class="div1">
-				<p class="teks">Nama Grup</p>
+				<p class="teks"><?php echo $gj['nama_grup']; ?></p>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
@@ -24,6 +27,7 @@
 				</div>
 			</div>
 		</div>
+		<?php endforeach; ?>
 		<p class="context">2018 / 12 / 12</p>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">
 		<div class="scroll">
@@ -41,8 +45,8 @@
 								<p>Rp. <?php echo $lp['harga']; ?></p>
 							</div>
 							<div class="thtext">
-								<button class="plus" onclick="window.location='<?php echo base_url() ?>editorderController/index';"> <i class="fas fa-pencil-alt"></i> </button>
-								<button class="plus"> <i class="fas fa-trash-alt"></i> </button>
+								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/edit/'); ?><?php echo $lp['id_pesanan'];?>/<?php echo $lp['id_grup'];?>/<?php echo $lp['id_barang'];?>/<?php echo $lp['id_pembeli'];?>';"> <i class="fas fa-pencil-alt"></i> </button>
+								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/hapus/'); ?><?php echo $lp['id_pesanan'];?>/<?php echo $lp['id_grup'];?>/<?php echo $lp['id_barang'];?>';"> <i class="fas fa-trash-alt"></i> </button>
 							</div>
 						</div>
 					</div>

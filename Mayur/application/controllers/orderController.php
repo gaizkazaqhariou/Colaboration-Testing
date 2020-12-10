@@ -13,6 +13,7 @@ class orderController extends CI_Controller
         }
 
         $this->load->model('produkModel');
+        $this->load->model('pembeliModel');
         $this->load->database();
     }
 
@@ -20,6 +21,7 @@ class orderController extends CI_Controller
     {
         $data['id_grup'] = $id_grup;
         $data['listB'] = $this->produkModel->produkPenjual($id_penjual);
+         $data['grupJ'] = $this->pembeliModel->grupTerjoin($id_grup);
         $this->load->view('orderView', $data);
     }
 

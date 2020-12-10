@@ -42,7 +42,7 @@
 						<?php echo $pj['nama_penjual']; ?><br>
 						<?php echo $pj['deskripsi']; ?><br>
 					</p>
-					<button onclick="window.location='<?php echo base_url() ?>sayurController/index';">Pilih</button>
+					<!-- <button onclick="window.location='<?php echo base_url() ?>sayurController/index';">Pilih</button> -->
 				</div>
 			<?php endforeach; ?>
 		</div>

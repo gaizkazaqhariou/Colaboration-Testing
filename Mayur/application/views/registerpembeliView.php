@@ -6,14 +6,14 @@
 </head>
 <body>
 	<img src="<?php echo base_url();?>assets/img/sayur.jpg" class="backgroundImage">
-		<div class="box" action="proses_login.php" method="POST">
+		<form class="box" action="<?php echo base_url('registerpembeliController/tambahPembeli');?>" method="POST">
 			<h1 class="h1"><b>Daftar Pembeli</b></h1>
-			<input type="text" name="username" placeholder="Nama Lengkap">
-			<input type="text" name="nomer" placeholder="Nomer HP">
-			<input type="text" name="nomer" placeholder="Alamat Lengkap">
-			<input type="password" name="password" placeholder="Password">
+			<input type="text" name="nama_pembeli" placeholder="Nama Lengkap">
+			<input type="text" name="no_hp_pembeli" placeholder="Nomer HP">
+			<input type="text" name="alamat_pembeli" placeholder="Alamat Lengkap">
+			<input type="password" name="pass_pembeli" placeholder="Password">
 			<input type="file" name="">
-			<input type="button" name="login" value="Lanjutkan" onclick="window.location='<?php echo base_url()?>loginpembeliController/index';">
-		</div>
+			<input type="submit" name="login" value="Lanjutkan">
+		</form>
 </body>
 </html>

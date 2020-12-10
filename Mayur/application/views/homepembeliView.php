@@ -29,11 +29,11 @@
 				</div>
 			</div>
 		</div>
-		<div style="display: flex; flex-direction: row;">
+		<!-- <div style="display: flex; flex-direction: row;">
 			<input type="text" name="nomer" placeholder="&emsp; cari bahan" class="search">
 			<input type="submit" name="search" class="cari" value="cari">
-		</div>
-		<p class="category">Kategori</p>
+		</div> -->
+		<p class="category" style="margin-top: 15%;">Kategori</p>
 		<div style="display: flex; flex-direction: row;">
 			<button class="but" type="button" style="margin-left: 5%;" onclick="window.location='<?php echo base_url() ?>listpedagangController/index';">
 				<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="categoryimg">
@@ -41,12 +41,12 @@
 			<button class="but" type="button" onclick="window.location='<?php echo base_url() ?>sayurController/allproduk';">
 				<img src="<?php echo base_url(); ?>assets/img/cart.png" class="categoryimg">
 			</button>
-			<button class="but" type="button" onclick="window.location='<?php echo base_url() ?>factController/index';">
+			<!-- <button class="but" type="button" onclick="window.location='<?php echo base_url() ?>factController/index';">
 				<img src="<?php echo base_url(); ?>assets/img/fact.png" class="categoryimg">
-			</button>
+			</button> -->
 
 		</div>
-		<p class="category">Paling Laris</p>
+		<p class="category">Paling Baru</p>
 		<div class="scroll">
 			<?php $no = 1;
 			foreach ($daftarpenjual as $pj) :
