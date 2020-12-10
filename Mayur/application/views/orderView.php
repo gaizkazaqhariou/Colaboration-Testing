@@ -29,7 +29,7 @@
 		</div>
 		<?php endforeach; ?>
 		<div class="content">
-			<select name="id_barang" class="form-control" style="width: 50%; margin-top: 5%; margin-left: 15%;">
+			<select name="id_barang" class="form-control" style="width: 50%; margin-top: 7%; margin-left: 15%;" required="required">
 				<option value="pick">Nama Barang</option>
 				<?php $no = 1;
 				foreach ($listB as $lp) :
@@ -38,11 +38,11 @@
 				<?php endforeach; ?>
 			</select>
 			<input type="hidden" name="id_grup" value="<?php echo $id_grup; ?>">
-			<input type="number" name="qty" class="kuantitas">
+			<input type="number" name="qty" class="kuantitas" required="required">
 		</div>
 		<div class="content">
-			<p class="context">Waktu</p>
-			<select name="waktu" class="form-control">
+			<p class="context" style="margin-left: 15%;">Waktu</p>
+			<select name="waktu" class="form-control" style="margin-top: 4%;" required="required">
 				<option value="hari_ini">
 					hari ini - <?php $date = date('Y-m-d');
 								echo $date;  ?>

@@ -35,7 +35,7 @@
 				</div>
 			</div>
 		</div>
-		<p class="context">2018 / 12 / 12</p>
+		<p class="context">Pesanan</p>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">
 		<div class="scroll">
 			<?php $rekapTotalHarga = 0; ?>

@@ -26,7 +26,7 @@
 			<div class="content">
 				<input type="hidden" name="id_pesanan" value="<?php echo $ps->id_pesanan ?>">
 				<!-- <input type="text" name="" value="<?php echo $produkW['id_barang'];?>"> -->
-				<select name="id_barang" class="form-control">
+				<select name="id_barang" class="form-control" style="width: 50%; margin-top: 7%; margin-left: 15%;" required="required">
 					<!-- <option value="<?php echo $produkW['nama_barang'];?>-<?php echo $produkW['harga'];?>/<?php echo $produkW['satuan'];?>"></option> -->
 					<?php echo "<option value='" . $produkW['id_barang'] . "'>" . $produkW['nama_barang'] ."-".$produkW['harga']."/". $produkW['satuan']. " </option>"; ?>
 					<?php $no = 1;
@@ -36,11 +36,11 @@
 					<?php endforeach; ?>
 				</select>
 				<input type="hidden" name="id_grup" value="<?php echo $ps->id_grup; ?>">
-				<input type="number" name="qty" class="kuantitas" value="<?php echo $ps->jumlah_barang ?>">
+				<input type="number" name="qty" class="kuantitas" value="<?php echo $ps->jumlah_barang ?>" required="required">
 			</div>
 			<div class="content">
-				<p class="context">Waktu</p>
-			<select name="waktu" class="form-control">
+				<p class="context" style="margin-left: 15%;">Waktu</p>
+			<select name="waktu" class="form-control" style="margin-top: 4%;" required="required">
 				<?php if ($ket['keterangan'] == 'hari_ini') { ?>
 					<option value="$ket">
 						hari ini - <?php $date = date('Y-m-d');

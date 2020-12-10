@@ -68,7 +68,7 @@ body, html {
 	border-radius: 30px;
 	transition: 0.25s; 
 	width: 70%;
-	height: 20px;
+	height: 10px;
 }
 .box input[type="button"]{
 	border: 0;
