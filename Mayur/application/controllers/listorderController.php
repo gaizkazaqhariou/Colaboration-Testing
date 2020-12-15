@@ -21,7 +21,8 @@ class listorderController extends CI_Controller
 
     public function index($id, $id_grup)
     {
-        $data['listP'] = $this->rekapModel->detailPesanan($id, $id_grup);
+        $data['listP'] = $this->rekapModel->detailPesananGrup($id, $id_grup);
+        $data['hargaH'] = $this->rekapModel->hargaTotal($id, $id_grup);
         $data['grupJ'] = $this->pembeliModel->grupTerjoin($id_grup);
         $this->load->view('listorderView', $data);
     }

@@ -31,7 +31,7 @@ class editorderController extends CI_Controller {
             'id_pembeli' => $id_pembeli,
             'id_barang' => $id_barang,
             'jumlah_barang' => $jumlah,
-            'keterangan' => $waktu
+            'tanggal_pesan' => $waktu
         );
 
         $where = array(
@@ -45,4 +45,3 @@ class editorderController extends CI_Controller {
 }
 
 /* End of file Controllername.php */
-?>

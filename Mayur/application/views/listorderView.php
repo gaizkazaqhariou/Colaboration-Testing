@@ -12,21 +12,21 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
 		<?php $no = 1;
-			foreach ($grupJ as $gj) :
+		foreach ($grupJ as $gj) :
 		?>
-		<div class="box1">
-			<div class="div1">
-				<p class="teks"><?php echo $gj['nama_grup']; ?></p>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
-				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
-					<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
-					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+			<div class="box1">
+				<div class="div1">
+					<p class="teks"><?php echo $gj['nama_grup']; ?></p>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
+					<div class="dropdown-content">
+						<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+						<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
+						<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+					</div>
 				</div>
 			</div>
-		</div>
 		<?php endforeach; ?>
 		<p class="context">Pesanan</p>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">
@@ -39,14 +39,22 @@
 					<div class="card">
 						<div class="row">
 							<div class="fstext">
-								<p><?php echo $lp['nama_barang']; ?> <?php echo $lp['jumlah_barang']; ?> <?php echo $lp['satuan']; ?></p>
+								<p><?php echo $lp['nama_barang']; ?> <?php echo $lp['jumlah_barang']; ?> <?php echo $lp['satuan']; ?> <button> <?php $tomorrow = date("Y-m-d", strtotime("+1 day"));
+																																				$date = date('Y-m-d');
+																																				if ($lp['tanggal_pesan'] == $date) {
+																																					echo 'HARI INI !';
+																																				} else if ($lp['tanggal_pesan'] == $tomorrow) {
+																																					echo 'BESOK';
+																																				} else {
+																																					echo 'selesai';
+																																				} ?></button></p>
 							</div>
 							<div class="sctext">
 								<p>Rp. <?php echo $lp['harga']; ?></p>
 							</div>
 							<div class="thtext">
-								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/edit/'); ?><?php echo $lp['id_pesanan'];?>/<?php echo $lp['id_grup'];?>/<?php echo $lp['id_barang'];?>/<?php echo $lp['id_pembeli'];?>';"> <i class="fas fa-pencil-alt"></i> </button>
-								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/hapus/'); ?><?php echo $lp['id_pesanan'];?>/<?php echo $lp['id_grup'];?>/<?php echo $lp['id_barang'];?>';"> <i class="fas fa-trash-alt"></i> </button>
+								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/edit/'); ?><?php echo $lp['id_pesanan']; ?>/<?php echo $lp['id_grup']; ?>/<?php echo $lp['id_barang']; ?>/<?php echo $lp['id_pembeli']; ?>';"> <i class="fas fa-pencil-alt"></i> </button>
+								<button class="plus" onclick="window.location='<?php echo base_url('listorderController/hapus/'); ?><?php echo $lp['id_pesanan']; ?>/<?php echo $lp['id_grup']; ?>/<?php echo $lp['id_barang']; ?>';"> <i class="fas fa-trash-alt"></i> </button>
 							</div>
 						</div>
 					</div>
@@ -54,12 +62,17 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
+		<?php $hargaHari = 0;
+		foreach ($hargaH as $hh) :
+			$hargaHari = $hargaHari + $hh['totalbarang'];
+		endforeach;
+		?>
 		<div class="row">
 			<div class="width1">
-				<p>TOTAL</p>
+				<p>TOTAL Belanja hari ini Rp. <?php echo $hargaHari; ?></p>
 			</div>
 			<div class="width2">
-				<p>Rp. <?php echo $rekapTotalHarga; ?></p>
+				<p>Belanja Keseluruhan Rp. <?php echo $rekapTotalHarga; ?></p>
 			</div>
 		</div>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">

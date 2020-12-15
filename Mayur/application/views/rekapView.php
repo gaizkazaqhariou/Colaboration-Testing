@@ -46,7 +46,15 @@
 					<div class="card">
 						<div class="row">
 							<div class="fstext">
-								<p><?php echo $dp['nama_barang']; ?> <?php echo $dp['jumlah_barang'] ?> <?php echo $dp['satuan']; ?></p>
+								<p><?php echo $dp['nama_barang']; ?> <?php echo $dp['jumlah_barang'] ?> <?php echo $dp['satuan']; ?> <button> <?php $tomorrow = date("Y-m-d", strtotime("+1 day"));
+																																				$date = date('Y-m-d');
+																																				if ($dp['tanggal_pesan'] == $date) {
+																																					echo 'HARI INI !';
+																																				} else if ($dp['tanggal_pesan'] == $tomorrow) {
+																																					echo 'BESOK';
+																																				} else {
+																																					echo 'selesai';
+																																				} ?></button></p>
 							</div>
 							<div class="sctext">
 								<p>Rp. <?php echo $dp['totalbarang']; ?></p>
@@ -56,13 +64,18 @@
 				</div>
 				<?php $rekapTotalHarga = $rekapTotalHarga + $dp['totalbarang']; ?>
 			<?php endforeach; ?>
+			<?php $hargaHari = 0;
+			foreach ($hargaH as $hh) :
+				$hargaHari = $hargaHari + $hh['totalbarang'];
+			endforeach;
+			?>
 		</div>
 		<div class="row">
 			<div class="width1">
-				<p>TOTAL</p>
+				<p>TOTAL Belanja hari ini Rp. <?php echo $hargaHari; ?></p>
 			</div>
 			<div class="width2">
-				<p>Rp. <?php echo $rekapTotalHarga; ?></p>
+				<p>Total Belanja Keseluruhan Rp. <?php echo $rekapTotalHarga; ?></p>
 			</div>
 		</div>
 		<hr style="border-width: 3px; margin-bottom: 5%; width: 50%;">
