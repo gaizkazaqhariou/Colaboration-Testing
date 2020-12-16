@@ -12,7 +12,7 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box" method="POST">
 		<div class="box1">
-			<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="circleimg">
+			<img src="<?php echo base_url();?>assets/upload/<?php echo $this->session->userdata("foto1");?>" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
 					<?php echo $this->session->userdata('user1'); ?>

@@ -33,7 +33,7 @@ class loginpembeliController extends CI_Controller
                 $this->session->set_userdata('foto1', $row->foto_pembeli);
             }
             $id1 = $this->session->userdata('id1');
-
+            
             redirect("homepembeliController/index/$id1");
         } else {
             $data['pesan'] = "username dan password anda salah";

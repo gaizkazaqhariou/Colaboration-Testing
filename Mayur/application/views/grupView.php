@@ -12,7 +12,7 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
 		<div class="box1">
-			<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="circleimg">
+			<img src="<?php echo base_url();?>assets/upload/<?php echo $this->session->userdata("foto");?>" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
 					<?php echo $this->session->userdata("user"); ?>
@@ -35,7 +35,7 @@
 			?>
 				<div class="content">
 					<div style="display: flex; flex-direction: row;">
-						<img src="<?php echo base_url(); ?>assets/img/penjual.png" class="imageContent">
+						<img src="<?php echo base_url(); ?>assets/upload/<?php echo $gp['foto_grup']; ?>" class="circleimg">
 						<p class="textContent">
 							<b><?php echo $gp["nama_grup"]; ?></b>
 							<br>

@@ -11,9 +11,12 @@
 <body>
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
+		<?php $no = 1;
+			foreach ($grupJ as $gj) :
+		?>
 		<div class="box1">
 			<div class="div1">
-				<p class="teks"><?php echo $namaG['nama_grup']; ?></p>
+				<p class="teks"><?php echo $gj['nama_grup']; ?></p>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
@@ -24,6 +27,7 @@
 				</div>
 			</div>
 		</div>
+		<?php endforeach; ?>
 		<p class="category" style="margin-top: 10%;">Pesananku</p>
 		<div style="display: flex; flex-direction: row;">
 			<div class="box3" style="width: 65%;" type="button" onclick="window.location='<?php echo base_url('listorderController/index/'); ?><?php echo $this->session->userdata('id1'); ?>/<?php echo $id_grup; ?>';">

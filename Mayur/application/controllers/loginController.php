@@ -29,6 +29,7 @@ class loginController extends CI_Controller
                 $this->session->set_userdata('user', $row->nama_penjual);
                 $this->session->set_userdata('nomer', $row->no_hp_penjual);
                 $this->session->set_userdata('password', $row->pass_penjual);
+                $this->session->set_userdata('foto', $row->foto_penjual);
             }
             $id = $this->session->userdata('id');
 

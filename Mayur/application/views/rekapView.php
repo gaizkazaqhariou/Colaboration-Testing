@@ -12,7 +12,7 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
 		<div class="box1">
-			<img src="<?php echo base_url(); ?>assets/img/pembeli.png" class="circleimg">
+			<img src="<?php echo base_url();?>assets/upload/<?php echo $this->session->userdata("foto1");?>" class="circleimg">
 			<div class="txt">
 				<p class="txthome">
 					<?php echo $dataP['nama_pembeli']; ?>
@@ -58,6 +58,9 @@
 							</div>
 							<div class="sctext">
 								<p>Rp. <?php echo $dp['totalbarang']; ?></p>
+							</div>
+							<div class="thtext">
+								<button class="plus" onclick="window.location='<?php echo base_url('rekapController/hapus/'); ?><?php echo $dp['id_pesanan']; ?>/<?php echo $dp['id_grup']; ?>/<?php echo $dp['id_pembeli']; ?>';" style="margin-top: 7%;"> <i class="fas fa-trash-alt" ></i> </button>
 							</div>
 						</div>
 					</div>

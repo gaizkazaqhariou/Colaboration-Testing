@@ -13,6 +13,7 @@ class rekapController extends CI_Controller
         }
 
         $this->load->model('rekapModel');
+        $this->load->model('pembeliModel');
         $this->load->database();
     }
 
@@ -22,6 +23,12 @@ class rekapController extends CI_Controller
         $data['hargaH'] = $this->rekapModel->hargaTotalHarian($id);
         $data['detailP'] = $this->rekapModel->detailPesanan($id);
         $this->load->view('rekapView', $data);
+    }
+
+    public function hapus($id, $id_grup, $id_pembeli){
+        $where = array('id_pesanan' => $id);
+        $this->rekapModel->hapus_data($where, 'pesanan');
+        redirect("rekapController/index/$id_pembeli/$id_grup");
     }
 }
 

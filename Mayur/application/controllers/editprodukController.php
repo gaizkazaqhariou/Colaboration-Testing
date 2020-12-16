@@ -17,6 +17,16 @@ class editprodukController extends CI_Controller {
     }
 
     public function editProduk(){
+        $config['upload_path'] = './assets/upload';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 3048;
+        $this->load->library('upload', $config);
+
+        if (!empty($_FILES['foto_barang'])) {
+            $this->upload->do_upload('foto_barang');
+            $foto_barang = $this->upload->data("file_name");
+        }
+
     	$id_barang = $this->input->post('id_barang');
     	$nama_barang = $this->input->post('nama_barang');
         $harga = $this->input->post('harga');
@@ -27,7 +37,8 @@ class editprodukController extends CI_Controller {
             'nama_barang' => $nama_barang,
             'harga' => $harga,
             'satuan' => $satuan,
-            'pemilik_barang' => $pemilik_barang
+            'pemilik_barang' => $pemilik_barang,
+            'foto_barang' => $foto_barang
         );
 
         $where = array(

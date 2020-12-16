@@ -6,12 +6,12 @@
 </head>
 <body>
 	<img src="<?php echo base_url();?>assets/img/sayur.jpg" class="backgroundImage">
-		<form class="box" action="<?php echo base_url('addprodukController/tambahProduk');?>" method="POST">
+		<form class="box" action="<?php echo base_url('addprodukController/tambahProduk');?>" method="POST" enctype="multipart/form-data">
 			<h1 class="h1"><b>Tambah Produk</b></h1>
 			<input type="text" name="nama_barang" placeholder="Nama Produk">
 			<input type="text" name="harga" placeholder="Harga Produk">
 			<input type="text" name="satuan" placeholder="Satuan Produk">
-			<input type="file" name="">
+			<input type="file" name="foto_barang">
 			<input type="submit" name="login" value="Tambah Produk">
 		</form>
 </body>

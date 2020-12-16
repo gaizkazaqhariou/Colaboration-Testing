@@ -6,7 +6,7 @@
 </head>
 <body>
 	<img src="<?php echo base_url();?>assets/img/sayur.jpg" class="backgroundImage">
-		<form class="box" action="<?php echo base_url('registerController/tambahPenjual');?>" method="POST">
+		<form class="box" action="<?php echo base_url('registerController/tambahPenjual');?>" method="POST" enctype="multipart/form-data">
 			<h1 class="h1"><b>Daftar Penjual</b></h1>
 			<input type="text" name="nama_penjual" placeholder="Nama Lengkap" required="required">
 			<input type="text" name="no_hp_penjual" placeholder="Nomer HP" required="required">

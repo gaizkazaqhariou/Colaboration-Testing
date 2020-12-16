@@ -19,6 +19,7 @@ class produkController extends CI_Controller
     public function index($id)
     {
         $data['produkP'] = $this->produkModel->produkPenjual($id);
+        // $data['namaP'] = $this->produkModel->namaProduk($id_barang);
         $data['id'] = $this->session->userdata('id');
         $this->load->view('produkView', $data);
     }

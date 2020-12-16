@@ -6,11 +6,11 @@
 </head>
 <body>
 	<img src="<?php echo base_url();?>assets/img/sayur.jpg" class="backgroundImage">
-		<form class="box" action="<?php echo base_url('addgrupController/tambahGrup');?>" method="POST">
+		<form class="box" action="<?php echo base_url('addgrupController/tambahGrup');?>" method="POST" enctype="multipart/form-data">
 			<h1 class="h1"><b>Tambah Grup</b></h1>
 			<input type="text" name="nama_grup" placeholder="Nama Grup">
 			<input type="text" name="kode_grup" placeholder="Kode Grup">
-			<input type="file" name="">
+			<input type="file" name="foto_grup">
 			<input type="submit" name="login" value="Tambah Grup">
 		</form>
 </body>

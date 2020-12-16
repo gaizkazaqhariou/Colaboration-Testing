@@ -32,4 +32,8 @@ class produkModel extends CI_Model
     {
         return $this->db->get_where($table, $where);
     }
+
+    public function namaProduk($id){
+        return $this->db->get_where('barang', array('id_barang' => $id))->row_array();
+    }
 }

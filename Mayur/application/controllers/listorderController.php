@@ -16,14 +16,12 @@ class listorderController extends CI_Controller
         $this->load->model('produkModel');
         $this->load->model('pembeliModel');
         $this->load->model('penjualModel');
-        $this->load->model('infoModel');
         $this->load->database();
     }
 
     public function index($id, $id_grup)
     {
         $data['listP'] = $this->rekapModel->detailPesananGrup($id, $id_grup);
-        $data['namaG'] = $this->infoModel->getdataGrup($id_grup);
         $data['hargaH'] = $this->rekapModel->hargaTotal($id, $id_grup);
         $data['grupJ'] = $this->pembeliModel->grupTerjoin($id_grup);
         $this->load->view('listorderView', $data);
