@@ -11,12 +11,12 @@
 <body>
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<form class="box" action="<?php echo base_url('orderController/addOrder'); ?>" method="POST">
-		<?php $no = 1;
-		foreach ($grupJ as $gj) :
+		<?php
+		foreach ($nama as $row) :
 		?>
 			<div class="box1">
 				<div class="div1">
-					<p class="teks"><?php echo $gj['nama_grup']; ?></p>
+					<p class="teks"><?php echo $row['nama_grup']; ?></p>
 				</div>
 				<div class="dropdown">
 					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>

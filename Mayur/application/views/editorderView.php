@@ -12,19 +12,23 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<?php foreach ($pesanan as $ps) { ?>
 		<form class="box" action="<?php echo base_url('editorderController/editOrder'); ?>" method="POST">
-			<div class="box1">
-				<div class="div1">
-					<p class="teks">Nama Grup</p>
-				</div>
-				<div class="dropdown">
-					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
-					<div class="dropdown-content">
-						<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
-						<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
-						<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+			<?php
+			foreach ($nama as $gj) :
+			?>
+				<div class="box1">
+					<div class="div1">
+						<p class="teks"><?php echo $gj['nama_grup']; ?></p>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
+						<div class="dropdown-content">
+							<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+							<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
+							<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php endforeach; ?>
 			<div class="content">
 				<input type="hidden" name="id_pesanan" value="<?php echo $ps->id_pesanan ?>">
 				<!-- <input type="text" name="" value="<?php echo $produkW['id_barang']; ?>"> -->
@@ -60,6 +64,13 @@
 						</option>
 						<option value="<?php echo $date; ?>">
 							hari ini - <?php echo $date; ?>
+						</option>
+					<?php } else { ?>
+						<option value="<?php echo $date; ?>">
+							hari ini - <?php echo $date; ?>
+						</option>
+						<option value="<?php echo $tomorrow; ?>">
+							besok - <?php echo $tomorrow;  ?>
 						</option>
 					<?php } ?>
 				</select>

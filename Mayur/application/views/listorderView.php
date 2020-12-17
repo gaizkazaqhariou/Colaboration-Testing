@@ -11,8 +11,8 @@
 <body>
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
-		<?php $no = 1;
-		foreach ($grupJ as $gj) :
+		<?php
+		foreach ($nama as $gj) :
 		?>
 			<div class="box1">
 				<div class="div1">
@@ -40,10 +40,10 @@
 						<div class="row">
 							<div class="fstext">
 								<p><?php echo $lp['nama_barang']; ?> <?php echo $lp['jumlah_barang']; ?> <?php echo $lp['satuan']; ?> <button> <?php $tomorrow = date("Y-m-d", strtotime("+1 day"));
-								$date = date('Y-m-d');
-								if ($lp['tanggal_pesan'] == $date) {
+																																				$date = date('Y-m-d');
+																																				if ($lp['tanggal_pesan'] == $date) {
 																																					echo 'HARI INI !';
-								} else if ($lp['tanggal_pesan'] == $tomorrow) {
+																																				} else if ($lp['tanggal_pesan'] == $tomorrow) {
 																																					echo 'BESOK';
 																																				} else {
 																																					echo 'selesai';

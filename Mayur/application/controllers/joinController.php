@@ -29,9 +29,10 @@ class joinController extends CI_Controller
 
         if ($cekKode) {
             foreach ($cekKode as $row) {
-                $id_grup = $row['id_grup'];
+                $this->session->set_userdata('id_grupJOIN', $row->id_grup);
             }
             $id = $this->session->userdata('id1');
+            $id_grup = $this->session->userdata('id_grupJOIN');
             $cekTerjoin = $this->joinModel->getTerjoin($id_grup, $id);
 
             if ($cekTerjoin == '') {

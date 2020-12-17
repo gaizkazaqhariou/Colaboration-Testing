@@ -12,21 +12,21 @@
 	<img src="<?php echo base_url(); ?>assets/img/sayur.jpg" class="backgroundImage">
 	<div class="box">
 		<?php $no = 1;
-			foreach ($grupJ as $gj) :
+		foreach ($nama as $gj) :
 		?>
-		<div class="box1">
-			<div class="div1">
-				<p class="teks"><?php echo $gj['nama_grup']; ?></p>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
-				<div class="dropdown-content">
-					<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
-					<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
-					<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+			<div class="box1">
+				<div class="div1">
+					<p class="teks"><?php echo $gj['nama_grup']; ?></p>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn"> <i class="fas fa-bars"></i> </button>
+					<div class="dropdown-content">
+						<a href="<?php echo base_url(); ?>homepembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Home</a>
+						<a href="<?php echo base_url(); ?>gruppembeliController/index/<?php echo $this->session->userdata('id1'); ?>">Grup Saya</a>
+						<a href="<?php echo base_url(); ?>loginpembeliController/logout">Logout</a>
+					</div>
 				</div>
 			</div>
-		</div>
 		<?php endforeach; ?>
 		<p class="category" style="margin-top: 10%;">Pesananku</p>
 		<div style="display: flex; flex-direction: row;">

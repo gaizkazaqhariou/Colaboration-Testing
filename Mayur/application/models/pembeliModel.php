@@ -11,12 +11,18 @@ class pembeliModel extends CI_Model
     public function penjualLimit()
     {
         $this->db->limit(3);
+        $this->db->order_by('id_penjual', 'desc');
         return $this->db->get('penjual')->result_array();
     }
 
     public function detailPenjual($id_penjual)
     {
         return $this->db->get_where('penjual', array('id_penjual' => $id_penjual))->row_array();
+    }
+
+    public function namaGrup($id_grup)
+    {
+        return $this->db->get_where('grup_jual', array('id_grup' => $id_grup))->result_array();
     }
 
     public function grupTerjoin($id)

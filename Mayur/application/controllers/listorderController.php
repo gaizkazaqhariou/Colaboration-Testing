@@ -24,6 +24,7 @@ class listorderController extends CI_Controller
         $data['listP'] = $this->rekapModel->detailPesananGrup($id, $id_grup);
         $data['hargaH'] = $this->rekapModel->hargaTotal($id, $id_grup);
         $data['grupJ'] = $this->pembeliModel->grupTerjoin($id_grup);
+        $data['nama'] = $this->pembeliModel->namaGrup($id_grup);
         $this->load->view('listorderView', $data);
     }
 
@@ -38,6 +39,7 @@ class listorderController extends CI_Controller
     public function edit($id_pesanan, $id_grup, $id_barang, $id_pembeli)
     {
         $where = array('id_pesanan' => $id_pesanan);
+        $data['nama'] = $this->pembeliModel->namaGrup($id_grup);
         $data['pesanan'] = $this->rekapModel->edit_data($where, 'pesanan')->result();
         $data['produkP'] = $this->produkModel->produkAll();
         $data['produkW'] = $this->penjualModel->produkwhere($id_barang);
